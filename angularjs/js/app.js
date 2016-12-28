@@ -11,11 +11,6 @@ var mainApp = angular.module('mainApp', [
         //'satellizer',
         'mainServices'
 ])
-/*
-.config(function($authProvider) {
-});
-
-*/
 .config(function(LoopBackResourceProvider) {
 
     // Use a custom auth header instead of the default 'Authorization'
@@ -24,6 +19,8 @@ var mainApp = angular.module('mainApp', [
     //         // Change the URL where to access the LoopBack REST API server
     LoopBackResourceProvider.setUrlBase('http://localhost:3000/api');
 });
+
+angular.module('mainControllers', []);
 mainApp.config(['$routeProvider',
         function($routeProvider) {
             $routeProvider.
@@ -47,9 +44,6 @@ mainApp.config(['$routeProvider',
                 templateUrl: 'partials/delete.html',
                 controller: 'deleteCtrl'
             }).
-
-
-
             otherwise({
                 redirectTo: '/'
             });

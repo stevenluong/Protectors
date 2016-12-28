@@ -10,12 +10,15 @@
 	  <link rel="stylesheet" href="css/animations.css">
 		-->
 		<script src="node_modules/jquery/dist/jquery.js"></script>
+		<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="node_modules/angular/angular.js"></script>
 		<script src="node_modules/angular-animate/angular-animate.js"></script>
 		<script src="node_modules/angular-route/angular-route.js"></script>
 		<script src="node_modules/angular-resource/angular-resource.js"></script>
 		<script src="js/app.js"></script>
 		<script src="js/controllers.js"></script>
+		<script src="js/userMenuCtrl.js"></script>
+		<script src="js/userCtrl.js"></script>
 		<script src="js/services.js"></script>
 		<script src="js/lb-services.js"></script>
 		<script src="js/filters.js"></script>
@@ -27,13 +30,10 @@
 //console.log(cookieValue);
 
 		</script>
-		<style type="text/css">
-#map { height: 60%; }
-		</style>
 	</head>
 	<body>
 		<nav class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container">
+			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 						<span class="sr-only">Toggle navigation</span>
@@ -47,18 +47,22 @@
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="#">Slapps Protector</a></li>
 					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li ng-controller="userMenuCtrl" class="dropdown">
+							<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{user.email}} ({{user.id}}) <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li ng-if="!user.isAuthenticated"><a href="#/login">Login</a></li>
+								<li ng-if="user.isAuthenticated"><a href="#/logout">Logout</a></li>
+								<li ng-if="!user.isAuthenticated"><a href="#/signup">Sign Up</a></li>
+								<li ng-if="user.isAuthenticated" role="separator" class="divider"></li>
+								<li ng-if="user.isAuthenticated"><a href="#/delete">Delete</a></li>
+							</ul>
+						</li>
+					</ul>
 				</div><!--/.nav-collapse -->
 			</div>
 		</nav>
 		<div class="view-container">
-			<div class="well">
-				<ul>
-					<li><a href="#/login">Login</a></li>
-					<li><a href="#/signup">Sign Up</a></li>
-					<li><a href="#/logout">Logout</a></li>
-					<li><a href="#/delete">Delete</a></li>
-				</ul>
-			</div>
 			<div ng-view>
 			</div>
 		</div>
