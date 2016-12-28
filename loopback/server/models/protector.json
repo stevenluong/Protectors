@@ -1,0 +1,14 @@
+{
+  "name": "Protector",
+  "plural": "Protectors",
+  "base": "User",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
