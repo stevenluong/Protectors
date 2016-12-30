@@ -1,7 +1,7 @@
 FROM node:latest
-RUN mkdir /http
-WORKDIR /http
-ADD package.json /http/package.json
+RUN mkdir /angularjs
+WORKDIR /angularjs
+ADD package.json /angularjs/package.json
 RUN npm install
 RUN npm install -g http-server
 

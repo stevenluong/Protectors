@@ -35,19 +35,19 @@ services:
             - /loopback/node_modules
         restart: always
         ports:
-            - "3000:3000"
+            - "3030:3000"
         #networks:
         #    - nginx_default
-    http:
-        build: http/.
-        command: http-server . -p 80
+    angularjs:
+        build: angularjs/.
+        command: http-server . -p 80 
         #depends_on: 
         #    - ror
         ports:
-            - "8080:80"
+            - "8088:80"
         volumes:
-            - ./http/:/http
-            - /http/node_modules
+            - ./angularjs/:/angularjs
+            - /angularjs/node_modules
         restart: always
         #networks:
         #    - nginx_default
