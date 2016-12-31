@@ -17,7 +17,7 @@ var mainApp = angular.module('mainApp', [
     //      LoopBackResourceProvider.setAuthHeader('X-Access-Token');
     //
     //         // Change the URL where to access the LoopBack REST API server
-    LoopBackResourceProvider.setUrlBase('http://dev.slapps.fr:3030/api');
+    LoopBackResourceProvider.setUrlBase('https://dev.slapps.fr:3030/api');
 });
 
 angular.module('mainControllers', []);
