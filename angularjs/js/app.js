@@ -44,6 +44,15 @@ mainApp.config(['$routeProvider',
                 templateUrl: 'partials/delete.html',
                 controller: 'deleteCtrl'
             }).
+              when('/myPositions', {
+                templateUrl: 'partials/myPositions.html',
+                controller: 'myPositionsCtrl'
+            }).
+            when('/meet', {
+                templateUrl: 'partials/meet.html',
+                controller: 'meetCtrl'
+            }).
+
             otherwise({
                 redirectTo: '/'
             });
